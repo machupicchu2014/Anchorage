@@ -78,7 +78,7 @@ extension ViewController: AnchorGroupProvider {
 
     @available(*, deprecated, message: "Do not set constraints directly on a UIViewController; set them on its root UIView.")
     public var verticalAnchors: AnchorPair<NSLayoutYAxisAnchor, NSLayoutYAxisAnchor> {
-#if os(macOS)
+#if os(macOS) || os(visionOS)
         return view.verticalAnchors
 #else
         return AnchorPair(first: topLayoutGuide.bottomAnchor, second: bottomLayoutGuide.topAnchor)
